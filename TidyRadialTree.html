@@ -1,15 +1,44 @@
 <!DOCTYPE html>
+<html>
+	<head>
+		<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" href="https://martinmunch.github.io/tableauJS/style.css">
+    <script src="https://d3js.org/d3.v5.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js" ></script>
+    
+</head>
+
+<style>
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+</style>
+
 <!-- Add a svg area, empty -->
 <div id="container" class="svg-container">
 
-<!--
-    <svg id="viz" height=2000 width=2000 x=500 y=500></svg>
--->
-
-<script src="https://d3js.org/d3.v5.min.js" ></script>
-
 <script>
-var rawdata = d3.json("https://martinmunch.github.io/tableauJS/flare-2.json")
+var json = null;
+$.ajax({
+    'async': false,
+    'global': false,
+    'url': "https://martinmunch.github.io/tableauJS/flare-2.json",
+    'dataType': "json",
+    'success': function (data) {
+        json = data;
+    }
+});
 </script>
 
 <script>
@@ -17,7 +46,7 @@ var width = 954;
 
 var radius = width / 2;
 
-var data = d3.hierarchy(rawdata)
+var data = d3.hierarchy(json)
     .sort((a, b) => d3.ascending(a.data.name, b.data.name));
 
 var tree = d3.tree()
@@ -99,3 +128,4 @@ function autoBox() {
 //d3 = require("d3@5")
 
 </script>
+</html>
