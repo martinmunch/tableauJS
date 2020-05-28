@@ -1,22 +1,36 @@
 {
- "name": "Birger",
- "children": [
-	{
-	 "name": "Lene",
-	 "children": [
-		{
-		 "name":"Anna",
-		 "children": [
-			{"name": "Molly", "value": 2}
-		 ]
-		},
-		{"name": "Andreas", "value":29}
-	 ]
-	},
-	{
-	 "name": "Claus",
-	 "children":[
-		 {"name":"Mads", "value":29},
-		 {"name":"Michael", "value":27}
-	 ]
+  "name": "Birger",
+  "children": [
+    {
+      "name": "Lene",
+      "children": [
+        {
+          "name": "Anna",
+          "children": [
+            {
+              "name": "Molly",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "name": "Andreas",
+          "value": 29
+        }
+      ]
+    },
+    {
+      "name": "Claus",
+      "children": [
+        {
+          "name": "Mads",
+          "value": 29
+        },
+        {
+          "name": "Michael",
+          "value": 27
+        }
+      ]
+    }
+  ]
 }
